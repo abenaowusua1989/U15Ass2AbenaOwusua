@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pulse VR - The UK's Number One Virtual Reality Gaming Experience">
+    <meta name="author" content="Pulse VR">
+
+    <title>Pulse VR | Home</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+
+ body {
+    margin: 0;
+    min-height: 100vh;
+    color: white;
+
+    background:
+        radial-gradient(100% 100% at var(--157-x-position) var(--157-y-position), #9c489c 0%, transparent),
+        radial-gradient(100% 100% at var(--158-x-position) var(--158-y-position), #341834 -43%, transparent),
+        radial-gradient(100% 100% at var(--159-x-position) var(--159-y-position), #000111 -38%, transparent),
+        radial-gradient(100% 100% at var(--160-x-position) var(--160-y-position), #3a123b -44%, transparent),
+        radial-gradient(100% 100% at var(--161-x-position) var(--161-y-position), #1d1827 -67%, transparent),
+        #1b253b;
+
+    animation: main 6s ease-in-out infinite;
+}
+
+@property --157-x-position {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 6%;
+}
+
+@property --157-y-position {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 84%;
+}
+
+@property --158-x-position {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 89%;
+}
+
+@property --158-y-position {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 87%;
+}
+
+@property --159-x-position {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 89%;
+}
+
+@property --159-y-position {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 11%;
+}
+
+@property --160-x-position {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 39%;
+}
+
+@property --160-y-position {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 71%;
+}
+
+@property --161-x-position {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 52%;
+}
+
+@property --161-y-position {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 53%;
+}
+
+@keyframes main {
+    0% {
+        --157-x-position: 6%;
+        --157-y-position: 84%;
+        --158-x-position: 89%;
+        --158-y-position: 87%;
+        --159-x-position: 89%;
+        --159-y-position: 11%;
+        --160-x-position: 39%;
+        --160-y-position: 71%;
+        --161-x-position: 52%;
+        --161-y-position: 53%;
+    }
+
+    50% {
+        --157-x-position: 80%;
+        --157-y-position: 15%;
+        --158-x-position: 20%;
+        --158-y-position: 20%;
+        --159-x-position: 20%;
+        --159-y-position: 20%;
+        --160-x-position: 20%;
+        --160-y-position: 20%;
+        --161-x-position: 20%;
+        --161-y-position: 20%;
+    }
+
+    100% {
+        --157-x-position: 6%;
+        --157-y-position: 84%;
+        --158-x-position: 89%;
+        --158-y-position: 87%;
+        --159-x-position: 89%;
+        --159-y-position: 11%;
+        --160-x-position: 39%;
+        --160-y-position: 71%;
+        --161-x-position: 52%;
+        --161-y-position: 53%;
+    }
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+        /* Hero Text */
+        #dynamicText {
+            font-size: 42px;
+            color: #9251FF;
+            min-height: 60px;
+            margin-bottom: 20px;
+        }
+
+        /* Slideshow */
+        .slideshow-container {
+            max-width: 1000px;
+            position: relative;
+            margin: 50px auto;
+        }
+
+        .mySlides {
+            display: none;
+        }
+
+        .mySlides img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 22px;
+            transition: 0.3s;
+            user-select: none;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .prev {
+            left: 0;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .numbertext {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: white;
+        }
+
+        .fade {
+            animation: fade 1s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .dot {
+            height: 15px;
+            width: 15px;
+            margin: 5px;
+            background: #777;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .active,
+        .dot:hover {
+            background: #9251FF;
+        }
+
+        /* KEEPING YOUR BUTTON CSS EXACTLY THE SAME */
+
+        .testbtn {
+            display: inline-block;
+            padding: 15px 35px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+
+            background: linear-gradient(135deg, #9251FF, #BB00FF);
+            border-radius: 10px;
+
+            box-shadow: 0 10px 25px rgba(146, 81, 255, 0.4);
+            transition: all 0.3s ease;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testbtn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                120deg,
+                transparent,
+                rgba(255,255,255,0.4),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        .testbtn:hover::before {
+            left: 100%;
+        }
+
+        .testbtn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(187, 0, 255, 0.6);
+        }
+
+        main {
+            text-align: center;
+            padding: 40px;
+        }
+
+        p {
+            max-width: 800px;
+            margin: auto;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        marquee img {
+            margin: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background: #000;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+
+    <img src="assets/Logo2.png" width="420" height="125" alt="Pulse VR Logo">
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="template.html">Home</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+</header>
+
+<main>
+
+    <h2 id="dynamicText"></h2>
+
+    <p>
+        Welcome to <strong>Pulse VR</strong>, the UK's number one virtual reality
+        gaming destination. Explore immersive adventures, compete with friends,
+        experience cutting-edge technology, and book unforgettable VR sessions
+        all in one place.
+    </p>
+
+    <br><br>
+
+    <a href="services.html" class="testbtn">
+        Join the Action
+    </a>
+
+    <br><br><br>
+
+
+
+    <div class="slideshow-container">
+
+        <div class="mySlides fade">
+            <div class="numbertext">1 / 4</div>
+            <img src="./assets/friends.gif" alt="">
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">2 / 4</div>
+            <img src="./assets/friends2.gif" alt="">
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">3 / 4</div>
+            <img src="./assets/friends3.gif" alt="">
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext">4 / 4</div>
+            <img src="./assets/trippy.gif" alt="">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    </div>
+
+    <div style="text-align:center;">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+    </div>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Pulse VR. All Rights Reserved.</p>
+</footer>
+
+<script>
+    // Typing animation
+    const messages = [
+        "Experience Next-Level VR Gaming",
+        "Challenge Your Friends",
+        "Book Your Adventure Today",
+        "Discover Immersive Worlds"
+    ];
+
+    let msg = 0;
+    let char = 0;
+    const text = document.getElementById("dynamicText");
+
+    function typeWriter() {
+        if (char < messages[msg].length) {
+            text.textContent += messages[msg].charAt(char);
+            char++;
+            setTimeout(typeWriter, 70);
+        } else {
+            setTimeout(() => {
+                text.textContent = "";
+                char = 0;
+                msg = (msg + 1) % messages.length;
+                typeWriter();
+            }, 2000);
+        }
+    }
+
+    typeWriter();
+
+    // Slideshow
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+
+        if (n > slides.length) {
+            slideIndex = 1;
+        }
+
+        if (n < 1) {
+            slideIndex = slides.length;
+        }
+
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        for (let i = 0; i < dots.length; i++) {
+            dots[i].classList.remove("active");
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].classList.add("active");
+    }
+
+    // Auto-play every 4 seconds
+    setInterval(function () {
+        plusSlides(1);
+    }, 4000);
+</script>
+
+</body>
+</html>
