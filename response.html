@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic Metadata -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Booking confirmation for Pulse VR">
+    <meta name="author" content="Pulse VR">
+
+    <title>Pulse VR | Booking Confirmed</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <style>
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: white;
+
+    background:
+        radial-gradient(100% 100% at var(--157-x-position) var(--157-y-position), #9c489c 0%, transparent),
+        radial-gradient(100% 100% at var(--158-x-position) var(--158-y-position), #341834 -43%, transparent),
+        radial-gradient(100% 100% at var(--159-x-position) var(--159-y-position), #000111 -38%, transparent),
+        radial-gradient(100% 100% at var(--160-x-position) var(--160-y-position), #3a123b -44%, transparent),
+        radial-gradient(100% 100% at var(--161-x-position) var(--161-y-position), #1d1827 -67%, transparent),
+        #1b253b;
+
+    animation: main 6s ease-in-out infinite;
+}
+
+@property --157-x-position {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 6%;
+}
+
+@property --157-y-position {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 84%;
+}
+
+@property --158-x-position {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 89%;
+}
+
+@property --158-y-position {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 87%;
+}
+
+@property --159-x-position {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 89%;
+}
+
+@property --159-y-position {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 11%;
+}
+
+@property --160-x-position {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 39%;
+}
+
+@property --160-y-position {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 71%;
+}
+
+@property --161-x-position {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 52%;
+}
+
+@property --161-y-position {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 53%;
+}
+
+@keyframes main {
+    0% {
+        --157-x-position: 6%;
+        --157-y-position: 84%;
+        --158-x-position: 89%;
+        --158-y-position: 87%;
+        --159-x-position: 89%;
+        --159-y-position: 11%;
+        --160-x-position: 39%;
+        --160-y-position: 71%;
+        --161-x-position: 52%;
+        --161-y-position: 53%;
+    }
+
+    50% {
+        --157-x-position: 80%;
+        --157-y-position: 15%;
+        --158-x-position: 20%;
+        --158-y-position: 20%;
+        --159-x-position: 20%;
+        --159-y-position: 20%;
+        --160-x-position: 20%;
+        --160-y-position: 20%;
+        --161-x-position: 20%;
+        --161-y-position: 20%;
+    }
+
+    100% {
+        --157-x-position: 6%;
+        --157-y-position: 84%;
+        --158-x-position: 89%;
+        --158-y-position: 87%;
+        --159-x-position: 89%;
+        --159-y-position: 11%;
+        --160-x-position: 39%;
+        --160-y-position: 71%;
+        --161-x-position: 52%;
+        --161-y-position: 53%;
+    }
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+        /* Button styling */
+        .testbtn {
+            display: inline-block;
+            padding: 15px 35px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+            background: linear-gradient(135deg, #9251FF, #BB00FF);
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(146, 81, 255, 0.4);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .testbtn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                120deg,
+                transparent,
+                rgba(255,255,255,0.4),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        .testbtn:hover::before {
+            left: 100%;
+        }
+
+        .testbtn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(187, 0, 255, 0.6);
+        }
+
+        .suggestions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .card {
+            width: 260px;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.3s ease;
+            box-shadow: 0 0 15px rgba(146, 81, 255, 0.3);
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(187, 0, 255, 0.6);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            margin: 10px;
+        }
+
+        .card p {
+            padding: 0 15px 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <img src="./assets/Logo2.png" width="420" height="125" alt="Pulse VR Logo">
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <section>
+        <h2>🎉 Booking Confirmed!</h2>
+
+        <p>
+            Thank you for booking with <strong>Pulse VR</strong>.<br>
+            Your reservation has been received and we can't wait to welcome you!
+        </p>
+
+        <br>
+
+        <form action="index.html">
+            <button type="submit" class="testbtn">
+                Return to Home
+            </button>
+        </form>
+    </section>
+
+    <br><br>
+
+    <h2>You Might Also Like</h2>
+
+    <div class="suggestions">
+
+        <div class="card">
+            <img src="./assets/horror.jpg" alt="Horror Game">
+            <h3>👻 Horror Escape</h3>
+            <p>Test your courage in haunted houses and terrifying survival missions.</p>
+        </div>
+
+        <div class="card">
+            <img src="./assets/action.jpg" alt="Action Game">
+            <h3>⚔️ Action Arena</h3>
+            <p>Fight enemies, complete objectives and become the ultimate VR hero.</p>
+        </div>
+
+        <div class="card">
+            <img src="./assets/similation.jpg" alt="Simulation Game">
+            <h3>🚗 Driving Simulator</h3>
+            <p>Experience realistic racing, flying and city exploration in virtual reality.</p>
+        </div>
+
+        <div class="card">
+            <img src="./assets/role play.png" alt="Role Play Game">
+            <h3>🛡️ Fantasy Role Play</h3>
+            <p>Create your own character and explore magical worlds full of adventure.</p>
+        </div>
+
+    </div>
+
+</main>
+
+<footer>
+    <p>&copy; 2026 Pulse VR. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
